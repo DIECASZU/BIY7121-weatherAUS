@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Proyecto BIY7121 de minería de datos para predecir lluvia al día siguiente usando weatherAUS.csv." />
+  <title>BIY7121 | Predicción de lluvia con weatherAUS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-content">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <img src="duoc_logo.png" alt="Duoc UC" />
+      </a>
+      <nav aria-label="Navegación principal">
+        <a href="#proyecto">Proyecto</a>
+        <a href="#metodologia">CRISP-DM</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#archivos">Archivos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Evaluación Final Transversal · BIY7121</span>
+          <h1>Predicción de lluvia al día siguiente con <span>weatherAUS</span></h1>
+          <p class="hero-text">
+            Proyecto de minería de datos orientado a anticipar si lloverá al día siguiente
+            mediante el análisis de registros meteorológicos históricos de Australia.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary"
+               href="https://colab.research.google.com/github/DIECASZU/BIY7121-weatherAUS/blob/main/BIY7121_ET_Notebook_Final_weatherAUS_Diego_Casanova_Jose_Soto.ipynb"
+               target="_blank" rel="noopener">
+              Ejecutar en Google Colab
+            </a>
+            <a class="btn btn-secondary"
+               href="BIY7121_ET_Notebook_Final_weatherAUS_Diego_Casanova_Jose_Soto.ipynb">
+              Ver notebook
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <div><strong>Integrantes</strong><span>Diego Casanova · José Soto</span></div>
+            <div><strong>Metodología</strong><span>CRISP-DM</span></div>
+            <div><strong>Variable objetivo</strong><span>RainTomorrow</span></div>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Resumen del proyecto">
+          <div class="status">
+            <span class="status-dot"></span>
+            Proyecto ejecutable en línea
+          </div>
+          <h2>Objetivo principal</h2>
+          <p>
+            Clasificar cada registro meteorológico en una de dos categorías:
+            <strong>llueve mañana</strong> o <strong>no llueve mañana</strong>.
+          </p>
+          <div class="mini-flow">
+            <span>Datos</span><b>→</b><span>Preparación</span><b>→</b><span>Modelo</span><b>→</b><span>Decisión</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="proyecto">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Contexto</span>
+          <h2>¿Qué problema resuelve?</h2>
+          <p>
+            Anticipar lluvia puede apoyar la planificación de rutas, turnos, actividades al aire libre,
+            seguridad y uso de recursos. El modelo no reemplaza un pronóstico meteorológico profesional:
+            funciona como herramienta de apoyo preventivo basada en patrones históricos.
+          </p>
+        </div>
+
+        <div class="metrics-grid">
+          <article class="metric-card">
+            <span class="metric-value">142.193</span>
+            <span class="metric-label">registros analizados</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-value">24</span>
+            <span class="metric-label">columnas originales</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-value">22,42%</span>
+            <span class="metric-label">días con lluvia mañana</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-value">2 clases</span>
+            <span class="metric-label">Sí / No</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="metodologia">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Metodología</span>
+          <h2>Etapas de CRISP-DM</h2>
+          <p>
+            CRISP-DM ordena el proyecto completo, desde comprender el problema hasta proponer
+            su uso y automatización.
+          </p>
+        </div>
+
+        <div class="crisp-grid">
+          <article class="crisp-card">
+            <span class="step">01</span>
+            <h3>Comprensión del negocio</h3>
+            <p>Definir el valor de anticipar lluvia y la pregunta que debe responder el proyecto.</p>
+          </article>
+          <article class="crisp-card">
+            <span class="step">02</span>
+            <h3>Comprensión de los datos</h3>
+            <p>Revisar estructura, tipos, datos faltantes, distribución y relaciones entre variables.</p>
+          </article>
+          <article class="crisp-card">
+            <span class="step">03</span>
+            <h3>Preparación de los datos</h3>
+            <p>Limpiar, imputar, transformar fechas, codificar categorías y evitar fuga de información.</p>
+          </article>
+          <article class="crisp-card">
+            <span class="step">04</span>
+            <h3>Modelamiento</h3>
+            <p>Comparar baseline, regresión logística, árbol de decisión y clustering meteorológico.</p>
+          </article>
+          <article class="crisp-card">
+            <span class="step">05</span>
+            <h3>Evaluación</h3>
+            <p>Analizar accuracy, precision, recall, F1, ROC-AUC y matriz de confusión.</p>
+          </article>
+          <article class="crisp-card">
+            <span class="step">06</span>
+            <h3>Despliegue</h3>
+            <p>Proponer carga automática, validación, predicción, almacenamiento y alertas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resultados">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Resultados</span>
+          <h2>Modelo seleccionado: regresión logística</h2>
+          <p>
+            Fue el modelo con mejor equilibrio general para detectar días lluviosos sin depender
+            únicamente del porcentaje total de aciertos.
+          </p>
+        </div>
+
+        <div class="result-layout">
+          <div class="score-card featured">
+            <span class="score-label">ROC-AUC</span>
+            <strong>0,873</strong>
+            <p>Alta capacidad para diferenciar días lluviosos y no lluviosos.</p>
+          </div>
+          <div class="score-card">
+            <span class="score-label">Accuracy</span>
+            <strong>0,796</strong>
+            <p>Porcentaje total de predicciones correctas.</p>
+          </div>
+          <div class="score-card">
+            <span class="score-label">Recall</span>
+            <strong>0,780</strong>
+            <p>Detecta cerca del 78% de los días que realmente fueron lluviosos.</p>
+          </div>
+          <div class="score-card">
+            <span class="score-label">F1-score</span>
+            <strong>0,632</strong>
+            <p>Equilibrio entre detección de lluvia y precisión de las alertas.</p>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <div>
+            <span class="eyebrow">Insight principal</span>
+            <h3>La humedad y la nubosidad elevan el riesgo</h3>
+          </div>
+          <p>
+            Mayor humedad en la tarde, más nubosidad, lluvia durante el día actual y menos horas de sol
+            se relacionan con una mayor probabilidad de lluvia al día siguiente.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="archivos">
+      <div class="container">
+        <div class="section-heading light">
+          <span class="eyebrow">Entrega completa</span>
+          <h2>Acceder a los archivos del proyecto</h2>
+          <p>Todos los recursos se encuentran disponibles desde esta misma página.</p>
+        </div>
+
+        <div class="files-grid">
+          <a class="file-card primary-file"
+             href="https://colab.research.google.com/github/DIECASZU/BIY7121-weatherAUS/blob/main/BIY7121_ET_Notebook_Final_weatherAUS_Diego_Casanova_Jose_Soto.ipynb"
+             target="_blank" rel="noopener">
+            <span class="file-type">COLAB</span>
+            <h3>Ejecutar notebook</h3>
+            <p>Abrir y ejecutar todas las celdas directamente desde el navegador.</p>
+            <span class="file-link">Abrir ahora →</span>
+          </a>
+
+          <a class="file-card"
+             href="01%20BIY7121_ET_Informe_Final_weatherAUS_Diego_Casanova_Jose_Soto.pdf"
+             target="_blank" rel="noopener">
+            <span class="file-type">PDF</span>
+            <h3>Informe final</h3>
+            <p>Metodología, preparación, modelos, resultados, conclusiones y recomendaciones.</p>
+            <span class="file-link">Ver informe →</span>
+          </a>
+
+          <a class="file-card"
+             href="BIY7121_ET_Presentacion_weatherAUS_Diego_Casanova_Jose_Soto.pptx">
+            <span class="file-type">PPTX</span>
+            <h3>Presentación</h3>
+            <p>Presentación utilizada para exponer los hallazgos principales del proyecto.</p>
+            <span class="file-link">Descargar PPT →</span>
+          </a>
+
+          <a class="file-card"
+             href="weatherAUS.csv">
+            <span class="file-type">CSV</span>
+            <h3>Fuente de datos</h3>
+            <p>Dataset meteorológico utilizado durante el análisis y modelamiento.</p>
+            <span class="file-link">Descargar datos →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <strong>BIY7121 · Minería de Datos</strong>
+        <span>Evaluación Final Transversal 2026</span>
+      </div>
+      <div>
+        <span>Diego Casanova · José Soto</span>
+        <a href="https://github.com/DIECASZU/BIY7121-weatherAUS" target="_blank" rel="noopener">Ver repositorio</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
